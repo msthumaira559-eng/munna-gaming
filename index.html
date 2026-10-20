@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080b14">
+<title>MUNNA GAMING | DLS & eFootball Top-Up</title>
+<style>
+:root{--bg:#080b14;--panel:#11182a;--line:#263653;--cyan:#00e5ff;--muted:#aebbd2;--white:#f5f8ff}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at top,#13213c 0,#080b14 48%);color:var(--white);font-family:system-ui,Arial,sans-serif}
+header{padding:22px 16px;text-align:center;border-bottom:1px solid var(--line);background:#080b14dd;position:sticky;top:0;backdrop-filter:blur(10px)}
+.brand{font-size:clamp(22px,5vw,32px);font-weight:900;color:var(--cyan);letter-spacing:1px;text-shadow:0 0 16px #00bfff55}
+nav{margin-top:12px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+a{color:var(--cyan)}nav a{text-decoration:none;color:var(--white);font-size:14px}
+main{width:min(980px,100%);margin:auto;padding:18px}
+.hero{text-align:center;padding:36px 12px 26px}
+.eyebrow{color:var(--cyan);font-weight:800;letter-spacing:2px;font-size:12px}
+h1{font-size:clamp(30px,8vw,52px);line-height:1.05;margin:12px 0}
+h2{color:var(--cyan);font-size:22px}
+.muted{color:var(--muted);line-height:1.6}
+.pill{display:inline-block;border:1px solid #006d85;background:#082432;color:var(--cyan);padding:7px 12px;border-radius:999px;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.panel,.game{background:linear-gradient(145deg,#151e33,#0e1422);border:1px solid var(--line);border-radius:16px;padding:18px}
+.game .emoji{font-size:32px}
+.game h3{margin:8px 0;color:var(--white)}
+.btn{display:inline-block;background:var(--cyan);color:#041018;text-decoration:none;font-weight:900;border:0;border-radius:10px;padding:12px 16px;cursor:pointer}
+form{display:grid;gap:14px}
+label{display:grid;gap:7px;font-size:14px;font-weight:700}
+input,select,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #33425f;background:#080e1b;color:var(--white);font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid #00bfff66;border-color:var(--cyan)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.notice{border-left:3px solid var(--cyan);padding:12px 14px;background:#0b1b29;border-radius:8px;color:#d7e6f7;font-size:13px;line-height:1.6}
+.price{font-size:13px;color:var(--muted);line-height:1.6}
+footer{text-align:center;padding:26px 16px;color:var(--muted);border-top:1px solid var(--line);margin-top:24px;font-size:13px}
+#result{display:none;white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:520px){.two{grid-template-columns:1fr}main{padding:12px}.panel{padding:15px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">🎮 MUNNA GAMING</div>
+  <nav><a href="#games">Games</a><a href="#order">Place Order</a><a href="#payment">Payment</a></nav>
+</header>
+<main>
+  <section class="hero">
+    <span class="pill">DLS • eFOOTBALL • GAMING TOP-UP</span>
+    <h1>LEVEL UP<br><span style="color:var(--cyan)">YOUR GAME</span></h1>
+    <p class="muted">Choose your game and submit a top-up request. Orders are processed manually after payment is checked.</p>
+  </section>
+
+  <section id="games">
+    <h2>⚡ Choose Your Game</h2>
+    <div class="grid">
+      <article class="game"><div class="emoji">⚽</div><h3>Dream League Soccer</h3><p class="muted">DLS coins / gems request</p><a class="btn" href="#order" data-game="DLS">Order DLS</a></article>
+      <article class="game"><div class="emoji">🏆</div><h3>eFootball</h3><p class="muted">eFootball coins request</p><a class="btn" href="#order" data-game="eFootball">Order eFootball</a></article>
+    </div>
+  </section>
+
+  <section id="payment" style="margin-top:28px">
+    <h2>💳 Payment Instructions</h2>
+    <div class="panel">
+      <p><strong>bKash and Nagad</strong> are available as payment options, but only use the merchant/personal payment number that the site owner has verified and intentionally published.</p>
+      <p class="muted">Owner setup required: edit this page and replace the placeholder payment instructions below with your correct number and the appropriate Send Money/Payment instructions. Never ask customers for their PIN or OTP.</p>
+      <div class="notice">Payment number: <strong>OWNER: ADD YOUR VERIFIED bKash/Nagad NUMBER HERE</strong><br>Do not send money until the owner has published and confirmed the correct number.</div>
+    </div>
+  </section>
+
+  <section id="order" style="margin-top:28px">
+    <h2>📝 Place a Top-Up Order</h2>
+    <div class="panel">
+      <p class="muted">Fill in the order form carefully. Never enter your game password, payment PIN, or OTP.</p>
+      <form id="orderForm" action="https://formsubmit.co/YOUR_EMAIL@example.com" method="POST">
+        <input type="hidden" name="_subject" value="New MUNNA GAMING Top-Up Order">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_template" value="table">
+        <div class="two">
+          <label>Game
+            <select name="Game" id="game" required>
+              <option value="">Choose game</option><option>DLS</option><option>eFootball</option>
+            </select>
+          </label>
+          <label>Package
+            <select name="Package" id="package" required>
+              <option value="">Choose package</option>
+              <option value="DLS coins/gems - confirm with owner">DLS coins / gems (confirm price)</option>
+              <option value="eFootball coins - confirm with owner">eFootball coins (confirm price)</option>
+            </select>
+          </label>
+        </div>
+        <label>Player ID / User ID <input name="Player ID" required maxlength="80" placeholder="Enter only the ID needed for delivery"></label>
+        <div class="two">
+          <label>Your name <input name="Customer name" required maxlength="80" autocomplete="name"></label>
+          <label>Contact number or email <input name="Customer contact" required maxlength="120" placeholder="How can the owner contact you?"></label>
+        </div>
+        <label>Payment method
+          <select name="Payment method" required><option value="">Choose payment</option><option>bKash</option><option>Nagad</option></select>
+        </label>
+        <div class="two">
+          <label>Sender number (optional) <input name="Sender number" inputmode="tel" maxlength="25" placeholder="Number used to send payment"></label>
+          <label>Transaction ID (if already paid) <input name="Transaction ID" maxlength="100" placeholder="TXN ID only — no PIN/OTP"></label>
+        </div>
+        <label>Notes (optional) <textarea name="Notes" rows="3" maxlength="500" placeholder="Package details or questions"></textarea></label>
+        <div class="notice">Submitting this form sends your order details to the website owner's configured email through FormSubmit. The owner must configure and verify the email address first. Do not pay until the payment number and package price are confirmed.</div>
+        <button class="btn" type="submit">Submit Order Request</button>
+      </form>
+      <p id="result" class="notice" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section style="margin-top:28px">
+    <h2>🛡️ Safety & Terms</h2>
+    <div class="panel muted">
+      <p>Orders are manual and are not completed instantly. The owner should verify the payment in their own official payment app before fulfilling an order.</p>
+      <p>Do not collect game passwords, payment PINs, OTPs, recovery codes, or unnecessary personal information. Refunds, delivery times, and prices should be clearly agreed before payment.</p>
+      <p>This is an independent fan-made top-up page and is not affiliated with or endorsed by the game publishers. Use only authorized, rule-compliant top-up methods.</p>
+    </div>
+  </section>
+</main>
+<footer>© 2026 MUNNA GAMING • Built for mobile with HTML & CSS</footer>
+<script>
+const game = document.getElementById('game');
+const pack = document.getElementById('package');
+document.querySelectorAll('[data-game]').forEach(btn => btn.addEventListener('click', () => {
+  game.value = btn.dataset.game;
+  pack.value = btn.dataset.game === 'DLS'
+    ? 'DLS coins/gems - confirm with owner'
+    : 'eFootball coins - confirm with owner';
+}));
+game.addEventListener('change', () => {
+  if (game.value === 'DLS') pack.value = 'DLS coins/gems - confirm with owner';
+  else if (game.value === 'eFootball') pack.value = 'eFootball coins - confirm with owner';
+});
+document.getElementById('orderForm').addEventListener('submit', (e) => {
+  if (e.target.action.includes('YOUR_EMAIL@example.com')) {
+    e.preventDefault();
+    alert('Setup needed: replace YOUR_EMAIL@example.com in index.html with your own email, then publish the site. No order was sent.');
+  }
+});
+</script>
+</body>
+</html>
